@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    tools:context=".ui.view.HomeFragment">
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/text_input_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="Insert..."
+        app:endIconMode="clear_text"
+        app:boxCornerRadiusBottomEnd="13dp"
+        app:boxCornerRadiusTopEnd="13dp"
+        app:boxCornerRadiusBottomStart="13dp"
+        app:boxCornerRadiusTopStart="13dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_editText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <FrameLayout
+        android:id="@+id/switch_fragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_input_layout"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

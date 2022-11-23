@@ -6,10 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.imagesearchapp.databinding.FragmentHomeMainBinding
+import com.example.imagesearchapp.databinding.FragmentHomeSearchBinding
 
 class Home_main : Fragment(){
     private var _binding : FragmentHomeMainBinding?= null
-    private val binding get() = _binding!!
+    private val binding get()=_binding!!
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

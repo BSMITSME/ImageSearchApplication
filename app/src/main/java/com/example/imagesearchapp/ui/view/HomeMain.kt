@@ -26,7 +26,9 @@ class HomeMain : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding.imgSearch.setOnClickListener {
+            findNavController().navigate(R.id.main_to_search)
+        }
     }
 
     override fun onDestroy() {

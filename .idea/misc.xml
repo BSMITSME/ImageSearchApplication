@@ -14,13 +14,13 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2929733276367188" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19384307861328126" />
         <entry key="app/src/main/res/layout/fragment_home_main.xml" value="0.26222826086956524" />
-        <entry key="app/src/main/res/layout/fragment_home_search.xml" value="0.3182291666666667" />
+        <entry key="app/src/main/res/layout/fragment_home_search.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_my_list.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.22735507246376813" />
         <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.28072916666666664" />
         <entry key="app/src/main/res/layout/home_fragment.xml" value="0.2635416666666667" />
         <entry key="app/src/main/res/layout/item_image.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/search_header_layout.xml" value="0.26458333333333334" />
+        <entry key="app/src/main/res/layout/search_header_layout.xml" value="0.3761678059895833" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.2796875" />
       </map>
     </option>

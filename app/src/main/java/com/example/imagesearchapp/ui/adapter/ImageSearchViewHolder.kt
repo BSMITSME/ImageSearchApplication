@@ -10,7 +10,9 @@ class ImageSearchViewHolder (
 ) : RecyclerView.ViewHolder(binding.root){
     fun bind(document : Document) {
         itemView.apply {
-            binding.imgItem.load(document.thumbnailUrl)
+
+            binding.imgItem.load(document.imageUrl)
+
         }
     }
 }

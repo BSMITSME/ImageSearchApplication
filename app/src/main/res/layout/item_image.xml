@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <GridLayout
-        android:layout_width="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:weightSum="3"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:columnCount="3"
-        android:orientation="horizontal"
-        >
-        <ImageView
-            android:id="@+id/img_item"
-            android:layout_gravity="fill"
-            />
-    </GridLayout>
+        android:id="@+id/img_item"
+        android:scaleType="centerCrop"
+        android:layout_weight="1"
 
+        />
 </LinearLayout>

@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.imagesearchapp.R
 import com.example.imagesearchapp.databinding.FragmentHomeSearchBinding
 import com.example.imagesearchapp.ui.adapter.ImageSearchAdapter
 import com.example.imagesearchapp.ui.viewmodel.ImageSearchViewModel
@@ -24,6 +25,7 @@ class HomeSearch : Fragment(){
 
     private lateinit var imageSearchViewModel: ImageSearchViewModel
     private lateinit var imageSearchAdapter: ImageSearchAdapter
+    private lateinit var mainActivity: MainActivity
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,10 +40,8 @@ class HomeSearch : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         imageSearchViewModel = (activity as MainActivity).imageSearchViewModel
-
         setRecyclerView()
         searchBooks()
-
 
         imageSearchViewModel.searchResult.observe(viewLifecycleOwner){
             val images = it.documents
@@ -58,14 +58,14 @@ class HomeSearch : Fragment(){
         }
 
         imageSearchAdapter.setOnItemClickListener {
-            val action = HomeSearchDirections.actionHomeSearchToItemClickFragment(it)
-            findNavController().navigate(action)
-        }
+            val action = HomeSearchDirections.searchToImageview(it)
+            findNavController().navigate(action)        }
     }
 
     private fun searchBooks(){
         var startTime = System.currentTimeMillis()
         var endTime : Long
+        mainActivity = activity as MainActivity
 
         binding.searchBoxContainer.searchEditText.addTextChangedListener {
             text : Editable? ->
@@ -79,11 +79,13 @@ class HomeSearch : Fragment(){
                 }
             }
             startTime = endTime
+            mainActivity.hideBottomNavigation(true)
         }
-
+        mainActivity.hideBottomNavigation(false)
     }
     override fun onDestroy() {
         _binding =null
+
         super.onDestroy()
     }
 }

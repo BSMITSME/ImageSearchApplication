@@ -23,14 +23,14 @@
         android:label="fragment_home_search"
         tools:layout="@layout/fragment_home_search" >
         <action
-            android:id="@+id/action_home_search_to_itemClickFragment"
+            android:id="@+id/search_to_imageview"
             app:destination="@id/itemClickFragment" />
     </fragment>
     <fragment
         android:id="@+id/itemClickFragment"
-        android:name="com.example.imagesearchapp.ItemClickFragment"
+        android:name="com.example.imagesearchapp.ui.view.ItemClickFragment"
         android:label="fragment_item_click"
-        tools:layout="@layout/fragment_item_click" >
+        tools:layout="@layout/fragment_item_click">
         <argument
             android:name="image"
             app:argType="com.example.imagesearchapp.data.model.Document" />

@@ -1,15 +1,23 @@
 package com.example.imagesearchapp.ui.view
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebViewClient
+import androidx.navigation.fragment.navArgs
+import coil.load
 import com.example.imagesearchapp.databinding.FragmentItemClickBinding
+import com.example.imagesearchapp.ui.viewmodel.ImageSearchViewModel
 
 class ItemClickFragment :Fragment(){
     private var _binding : FragmentItemClickBinding? = null
-    private val bidning get() = _binding!!
+    private val binding get() = _binding!!
+
+    private val args by navArgs<ItemClickFragmentArgs>()
+    private lateinit var imageSearchViewModel: ImageSearchViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -17,11 +25,16 @@ class ItemClickFragment :Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentItemClickBinding.inflate(inflater, container, false)
-        return bidning.root
+        return binding.root
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
+    @SuppressLint("SetJAvaScriptEnabled")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        imageSearchViewModel = (activity as MainActivity).imageSearchViewModel
+        val image = args.image
+        binding.imageView.load(image.imageUrl)
     }
 }
+

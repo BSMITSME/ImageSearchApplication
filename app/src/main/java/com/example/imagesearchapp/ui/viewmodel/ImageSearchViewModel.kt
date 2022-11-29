@@ -5,6 +5,7 @@ import com.example.imagesearchapp.data.model.Document
 import com.example.imagesearchapp.data.model.Images
 import com.example.imagesearchapp.repository.ImageSearchRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import java.util.*
 
@@ -27,16 +28,12 @@ class ImageSearchViewModel(
         }
     }
 
-    //SavedState
-//    var query = String()
-//        set(value){
-//            field = value
-//            savedStateHandle.set(SAVE_STATE_KEY, value)
-//        }
-//    init {
-//        query = savedStateHandle.get<String>(SAVE_STATE_KEY) ?: ""
-//    }
-//    companion object{
-//        private const val SAVE_STATE_KEY ="query"
-//    }
+    //Room
+    fun saveImage(document: Document) = viewModelScope.launch {
+        imageSearchRepository.insert(document)
+    }
+    fun deleteImage(document: Document) = viewModelScope.launch {
+        imageSearchRepository.delete(document)
+    }
+    val favoriteImage : Flow<List<Document>> = imageSearchRepository.getImages()
 }

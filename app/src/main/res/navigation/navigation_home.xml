@@ -21,5 +21,18 @@
         android:id="@+id/home_search"
         android:name="com.example.imagesearchapp.ui.view.HomeSearch"
         android:label="fragment_home_search"
-        tools:layout="@layout/fragment_home_search" />
+        tools:layout="@layout/fragment_home_search" >
+        <action
+            android:id="@+id/action_home_search_to_itemClickFragment"
+            app:destination="@id/itemClickFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemClickFragment"
+        android:name="com.example.imagesearchapp.ItemClickFragment"
+        android:label="fragment_item_click"
+        tools:layout="@layout/fragment_item_click" >
+        <argument
+            android:name="image"
+            app:argType="com.example.imagesearchapp.data.model.Document" />
+    </fragment>
 </navigation>

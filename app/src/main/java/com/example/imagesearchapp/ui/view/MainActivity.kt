@@ -7,6 +7,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHost
 import androidx.navigation.ui.setupWithNavController
 import com.example.imagesearchapp.R
+import com.example.imagesearchapp.data.db.ImageSearchDatabase
 import com.example.imagesearchapp.databinding.ActivityMainBinding
 import com.example.imagesearchapp.repository.ImageSearchRepositoryImpl
 import com.example.imagesearchapp.ui.viewmodel.ImageSearchViewModel
@@ -22,7 +23,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         navigation()
-        val imageSearchRepository = ImageSearchRepositoryImpl()
+
+        val database = ImageSearchDatabase.getInstance(this)
+        val imageSearchRepository = ImageSearchRepositoryImpl(database)
         val factory = ImageSearchViewModelFactory(imageSearchRepository)
         imageSearchViewModel = ViewModelProvider(this, factory).get(ImageSearchViewModel::class.java)
 

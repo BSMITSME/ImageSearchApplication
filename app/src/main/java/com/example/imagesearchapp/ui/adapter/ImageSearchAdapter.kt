@@ -17,6 +17,14 @@ class ImageSearchAdapter : ListAdapter<Document, ImageSearchViewHolder>(ImageDif
     override fun onBindViewHolder(holder: ImageSearchViewHolder, position: Int) {
         val image = currentList[position]
         holder.bind(image)
+        holder.itemView.setOnClickListener{
+            onItemClickListener?.let { it(image) }
+        }
+    }
+
+    private var onItemClickListener : ((Document) -> Unit)? = null
+    fun setOnItemClickListener(listener : (Document) -> Unit){
+        onItemClickListener = listener
     }
 
     companion object {

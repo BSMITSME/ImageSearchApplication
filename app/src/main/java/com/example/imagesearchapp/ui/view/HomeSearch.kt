@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
@@ -51,9 +52,14 @@ class HomeSearch : Fragment(){
         imageSearchAdapter = ImageSearchAdapter()
         binding.rvSearchResult.apply {
             setHasFixedSize(false)
-            layoutManager = GridLayoutManager(this.context, 3)
+            layoutManager = GridLayoutManager(this.context, 2)
             addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
             adapter = imageSearchAdapter
+        }
+
+        imageSearchAdapter.setOnItemClickListener {
+            val action = HomeSearchDirections.actionHomeSearchToItemClickFragment(it)
+            findNavController().navigate(action)
         }
     }
 
@@ -75,9 +81,6 @@ class HomeSearch : Fragment(){
             startTime = endTime
         }
 
-        if(!binding.searchBoxContainer.searchEditText.text.toString().equals("")){
-            binding.searchBoxContainer.clearSearchQuery.visibility
-        }
     }
     override fun onDestroy() {
         _binding =null

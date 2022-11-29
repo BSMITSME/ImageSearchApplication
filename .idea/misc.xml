@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.1621376811594203" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.142" />
         <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_list_alt_24.xml" value="0.178" />
@@ -15,11 +16,13 @@
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19384307861328126" />
         <entry key="app/src/main/res/layout/fragment_home_main.xml" value="0.26222826086956524" />
         <entry key="app/src/main/res/layout/fragment_home_search.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_item_click.xml" value="0.13601823708206687" />
+        <entry key="app/src/main/res/layout/fragment_item_click_fragment.xml" value="0.13072916666666667" />
         <entry key="app/src/main/res/layout/fragment_my_list.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.22735507246376813" />
         <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.28072916666666664" />
         <entry key="app/src/main/res/layout/home_fragment.xml" value="0.2635416666666667" />
-        <entry key="app/src/main/res/layout/item_image.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_image.xml" value="0.23145751953124993" />
         <entry key="app/src/main/res/layout/search_header_layout.xml" value="0.3761678059895833" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.2796875" />
       </map>

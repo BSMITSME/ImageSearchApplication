@@ -11,6 +11,7 @@ import androidx.navigation.fragment.navArgs
 import coil.load
 import com.example.imagesearchapp.databinding.FragmentItemClickBinding
 import com.example.imagesearchapp.ui.viewmodel.ImageSearchViewModel
+import com.google.android.material.snackbar.Snackbar
 
 class ItemClickFragment :Fragment(){
     private var _binding : FragmentItemClickBinding? = null
@@ -35,6 +36,18 @@ class ItemClickFragment :Fragment(){
         imageSearchViewModel = (activity as MainActivity).imageSearchViewModel
         val image = args.image
         binding.imageView.load(image.imageUrl)
+
+        binding.fabFavorite.setOnClickListener {
+            imageSearchViewModel.saveImage(image)
+            Snackbar.make(view, "Image has saved", Snackbar.LENGTH_SHORT).show()
+        }
     }
+
+    override fun onDestroy() {
+        _binding = null
+
+        super.onDestroy()
+    }
+
 }
 

@@ -6,14 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
-
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.imagesearchapp.R
 import com.example.imagesearchapp.databinding.FragmentHomeSearchBinding
 import com.example.imagesearchapp.ui.adapter.ImageSearchAdapter
 import com.example.imagesearchapp.ui.viewmodel.ImageSearchViewModel
@@ -38,7 +34,7 @@ class HomeSearch : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        mainActivity = activity as MainActivity
         imageSearchViewModel = (activity as MainActivity).imageSearchViewModel
         setRecyclerView()
         searchBooks()
@@ -47,6 +43,8 @@ class HomeSearch : Fragment(){
             val images = it.documents
             imageSearchAdapter.submitList(images)
         }
+        mainActivity.hideBottomNavigation(true)
+
     }
     private fun setRecyclerView(){
         imageSearchAdapter = ImageSearchAdapter()
@@ -59,13 +57,13 @@ class HomeSearch : Fragment(){
 
         imageSearchAdapter.setOnItemClickListener {
             val action = HomeSearchDirections.searchToImageview(it)
-            findNavController().navigate(action)        }
+            findNavController().navigate(action)
+        }
     }
 
     private fun searchBooks(){
         var startTime = System.currentTimeMillis()
         var endTime : Long
-        mainActivity = activity as MainActivity
 
         binding.searchBoxContainer.searchEditText.addTextChangedListener {
             text : Editable? ->
@@ -79,13 +77,11 @@ class HomeSearch : Fragment(){
                 }
             }
             startTime = endTime
-            mainActivity.hideBottomNavigation(true)
         }
-        mainActivity.hideBottomNavigation(false)
     }
     override fun onDestroy() {
         _binding =null
-
+        mainActivity.hideBottomNavigation(false)
         super.onDestroy()
     }
 }

@@ -14,5 +14,6 @@ interface SearchApi {
         @Query("query") query : String,
         @Query("sort") sort : String,
         @Query("page") page : Int,
-        @Query("size") size : Int) : Response<Images>
+        @Query("size") size : Int
+    ) : Response<Images>
 }

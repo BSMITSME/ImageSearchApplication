@@ -8,6 +8,7 @@
     android:background="#FFFFFF"
     tools:context=".ui.view.HomeSearch"
     >
+
     <include
         android:id="@+id/search_box_container"
         layout="@layout/search_header_layout" />

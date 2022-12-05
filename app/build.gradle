@@ -41,14 +41,12 @@ android {
 }
 
 dependencies {
-
     //moshi
     implementation 'com.squareup.moshi:moshi:1.14.0'
     kapt("com.squareup.moshi:moshi-kotlin-codegen:1.14.0")
 
     //safe-args
     implementation 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:2.0.1'
-
 
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -63,7 +61,6 @@ dependencies {
 
     //room
     def room_version = "2.4.3"
-
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:$room_version"

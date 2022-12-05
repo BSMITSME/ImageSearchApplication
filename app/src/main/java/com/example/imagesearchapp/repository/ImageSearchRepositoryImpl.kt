@@ -30,4 +30,5 @@ class ImageSearchRepositoryImpl(
     override fun getImages(): Flow<List<Document>> {
         return db.imageSearchDao().getImages()
     }
+
 }

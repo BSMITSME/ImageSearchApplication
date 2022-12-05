@@ -1,15 +1,14 @@
 package com.example.imagesearchapp.ui.view
 
 import android.os.Bundle
-import android.provider.ContactsContract
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.imagesearchapp.databinding.FragmentMyListBinding
 import com.example.imagesearchapp.ui.adapter.ImageSearchAdapter
 import com.example.imagesearchapp.ui.viewmodel.ImageSearchViewModel
@@ -37,24 +36,24 @@ class MyList : Fragment(){
 
         lifecycleScope.launch {
             imageSearchViewModel.favoriteImage.collectLatest {
-                imageSearchAdapter.submitList(it)
+               imageSearchAdapter.submitList(it)
             }
         }
 
     }
 
     private fun setRecyclerView(){
-        imageSearchAdapter = ImageSearchAdapter()
+        imageSearchAdapter = ImageSearchAdapter(false)
         binding.rvSearchResult.apply {
             setHasFixedSize(false)
-            layoutManager = GridLayoutManager(this.context, 2)
-            addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
+            //layoutManager = GridLayoutManager(this.context, 2)
+            layoutManager = LinearLayoutManager(this.context)
             adapter = imageSearchAdapter
         }
-
         imageSearchAdapter.setOnItemClickListener {
             val action = HomeSearchDirections.searchToImageview(it)
-            findNavController().navigate(action)        }
+            findNavController().navigate(action)
+        }
     }
 
     override fun onDestroy() {

@@ -1,5 +1,6 @@
 package com.example.imagesearchapp.ui.viewmodel
 
+import android.widget.ListAdapter
 import androidx.lifecycle.*
 import com.example.imagesearchapp.data.model.Document
 import com.example.imagesearchapp.data.model.Images
@@ -36,4 +37,5 @@ class ImageSearchViewModel(
         imageSearchRepository.delete(document)
     }
     val favoriteImage : Flow<List<Document>> = imageSearchRepository.getImages()
+
 }

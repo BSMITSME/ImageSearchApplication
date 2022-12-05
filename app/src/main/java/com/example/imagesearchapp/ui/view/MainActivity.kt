@@ -26,8 +26,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         navigation()
 
-
-
         val database = ImageSearchDatabase.getInstance(this)
         val imageSearchRepository = ImageSearchRepositoryImpl(database)
         val factory = ImageSearchViewModelFactory(imageSearchRepository)

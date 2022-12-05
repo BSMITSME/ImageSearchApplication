@@ -47,14 +47,12 @@ class HomeSearch : Fragment(){
 
     }
     private fun setRecyclerView(){
-        imageSearchAdapter = ImageSearchAdapter()
+        imageSearchAdapter = ImageSearchAdapter(true)
         binding.rvSearchResult.apply {
             setHasFixedSize(false)
             layoutManager = GridLayoutManager(this.context, 2)
-            addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
             adapter = imageSearchAdapter
         }
-
         imageSearchAdapter.setOnItemClickListener {
             val action = HomeSearchDirections.searchToImageview(it)
             findNavController().navigate(action)

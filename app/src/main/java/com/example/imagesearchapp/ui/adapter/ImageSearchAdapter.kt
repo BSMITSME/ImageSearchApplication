@@ -33,6 +33,9 @@ class ImageSearchAdapter(var type : Boolean) : ListAdapter<Document, RecyclerVie
             }
         }else{
             (holder as ImageMyListViewHolder).bind(image)
+            (holder as ImageMyListViewHolder).itemView.setOnClickListener {
+                onItemClickListener?.let{it(image)}
+            }
         }
     }
 

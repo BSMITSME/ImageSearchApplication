@@ -29,7 +29,7 @@ class ItemClickFragment :Fragment(){
         return binding.root
     }
 
-    @SuppressLint("SetJAvaScriptEnabled")
+//    @SuppressLint("SetJAvaScriptEnabled")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

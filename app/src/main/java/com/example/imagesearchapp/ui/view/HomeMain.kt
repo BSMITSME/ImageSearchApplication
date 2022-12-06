@@ -39,6 +39,7 @@ class HomeMain : Fragment(){
         }
         binding.mainImag.load(R.drawable.pasted_graphic)
 
+
     }
 
 

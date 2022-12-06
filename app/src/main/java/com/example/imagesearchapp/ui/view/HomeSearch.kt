@@ -66,7 +66,7 @@ class HomeSearch : Fragment(){
         binding.searchBoxContainer.searchEditText.addTextChangedListener {
             text : Editable? ->
             endTime = System.currentTimeMillis()
-            if(endTime - startTime >= 1000L){
+            if(endTime - startTime >= 100L){
                 text?.let {
                     val query = it.toString().trim()
                     if(query.isNotEmpty()){

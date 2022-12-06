@@ -9,7 +9,11 @@
         android:id="@+id/myList"
         android:name="com.example.imagesearchapp.ui.view.MyList"
         android:label="fragment_my_list"
-        tools:layout="@layout/fragment_my_list" />
+        tools:layout="@layout/fragment_my_list" >
+        <action
+            android:id="@+id/action_myList_to_listSelected"
+            app:destination="@id/listSelected" />
+    </fragment>
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.example.imagesearchapp.ui.view.SettingFragment"
@@ -20,4 +24,13 @@
         android:name="com.example.imagesearchapp.ui.view.Home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/listSelected"
+        android:name="com.example.imagesearchapp.ui.view.ListSelected"
+        android:label="fragment_list_selected"
+        tools:layout="@layout/fragment_list_selected" >
+        <argument
+            android:name="image"
+            app:argType="com.example.imagesearchapp.data.model.Document" />
+    </fragment>
 </navigation>

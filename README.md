@@ -1,4 +1,12 @@
-# ImageSearchApplication
-이미지 API를 가져와 검색하는 이미지 검색앱입니다.  
-완성도 있는 앱의 형태를 위해 계속 수정중입니다(미완성)  
-kakao developers에서 API_KEY를 받아 사용하세요. 
+## ImageSearchApplication
+### 이미지 API를 가져와 검색하는 이미지 검색앱입니다.  
+kakao developers에서 API_KEY를 발급받아 넣으셔야 합니다.
+
+### 주요 기능
+- 추가 / 삭제
+- 저장
+### 구동화면 
+
+![](https://user-images.githubusercontent.com/77155103/207314026-493d9d20-c5d1-48c1-b4b0-f5977f085b1d.gif)
+
+계속해서 부족한 부분 수정중입니다!

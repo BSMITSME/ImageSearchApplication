@@ -25,7 +25,6 @@
             app:navGraph = "@navigation/navigation_fragment"
             app:defaultNavHost = "true"
             />
-
     </FrameLayout>
 <com.google.android.material.bottomnavigation.BottomNavigationView
     android:id="@+id/bottom_nav"

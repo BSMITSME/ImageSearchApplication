@@ -21,7 +21,6 @@ class HomeMain : Fragment(){
     private val binding get()=_binding!!
     private lateinit var imageSearchViewModel: ImageSearchViewModel
     private val args by navArgs<ItemClickFragmentArgs>()
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -41,7 +40,6 @@ class HomeMain : Fragment(){
 
 
     }
-
 
     override fun onDestroy() {
         _binding = null

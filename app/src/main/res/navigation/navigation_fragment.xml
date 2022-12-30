@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_fragment"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/myList"
@@ -33,22 +33,14 @@
             android:name="image"
             app:argType="com.example.imagesearchapp.data.model.Document" />
     </fragment>
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.imagesearchapp.ui.view.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_loginFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/signUpFragment"
-        android:name="com.example.imagesearchapp.ui.view.SignUpFragment"
-        android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" >
-        <action
-            android:id="@+id/action_signUpFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.imagesearchapp.ui.view.LoginActivity"
+        android:label="LoginActivity"
+        tools:layout="@layout/activity_login"/>
+    <activity
+        android:id="@+id/signUpActivity"
+        android:name="com.example.imagesearchapp.ui.view.SignUpActivity"
+        android:label="SignUpActivity"
+        tools:layout="@layout/activity_sign_up"/>
 </navigation>

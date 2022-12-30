@@ -27,7 +27,7 @@ class LoginFragment : Fragment() {
         mainActivity = activity as MainActivity
         mainActivity.hideBottomNavigation(true)
         binding.btnNew.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
+            //findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
         }
         super.onViewCreated(view, savedInstanceState)
     }

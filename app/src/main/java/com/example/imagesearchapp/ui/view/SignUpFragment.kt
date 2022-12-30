@@ -49,8 +49,6 @@ class SignUpFragment : Fragment() {
                 .addOnCompleteListener { task ->
                     if(task.isSuccessful){
                         Toast.makeText(context,"회원가입에 성공했습니다!",Toast.LENGTH_SHORT).show()
-                        sleep(1000)
-                        findNavController().navigate(R.id.action_signUpFragment_to_homeFragment)
                     }else{
                         Toast.makeText(context,"이미 존재하는 계정이거나, 회원가입에 실패했습니다.",Toast.LENGTH_SHORT).show()
                     }

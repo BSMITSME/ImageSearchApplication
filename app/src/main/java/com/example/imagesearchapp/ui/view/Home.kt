@@ -11,6 +11,8 @@ import com.example.imagesearchapp.databinding.FragmentHomeBinding
 class Home : Fragment(){
     private var _binding : FragmentHomeBinding?= null
     private val binding get()=_binding!!
+    private lateinit var mainActivity : MainActivity
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -23,7 +25,8 @@ class Home : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        mainActivity = activity as MainActivity
+        mainActivity.hideBottomNavigation(false)
     }
 
     override fun onDestroy() {

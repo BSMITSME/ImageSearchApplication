@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "682488462963",
+    "project_id": "imagesearchapp-a6871",
+    "storage_bucket": "imagesearchapp-a6871.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682488462963:android:bd3404da0faaeeab7ab406",
+        "android_client_info": {
+          "package_name": "com.example.imagesearchapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "682488462963-lc71d4vdtaomj1rvghol6fhmfse3l8cm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJElUd7iVGlszq40hQXPhNePc0yFFhlaQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "682488462963-lc71d4vdtaomj1rvghol6fhmfse3l8cm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,8 +5,7 @@ plugins {
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-parcelize'
-
-
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -43,6 +42,7 @@ android {
 dependencies {
     //moshi
     implementation 'com.squareup.moshi:moshi:1.14.0'
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
     kapt("com.squareup.moshi:moshi-kotlin-codegen:1.14.0")
 
     //safe-args
@@ -70,6 +70,11 @@ dependencies {
 
     //safe_args
     implementation 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:2.0.1'
+
+    //firebase
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'

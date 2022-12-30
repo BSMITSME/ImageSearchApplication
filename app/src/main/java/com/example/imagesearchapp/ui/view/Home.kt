@@ -17,7 +17,7 @@ class Home : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-
+        val hidebar = activity as MainActivity
         return binding.root
     }
 

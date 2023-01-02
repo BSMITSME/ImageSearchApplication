@@ -20,6 +20,7 @@
         <entry key="app/src/main/res/drawable/layout_bg.xml" value="0.147" />
         <entry key="app/src/main/res/drawable/profile_mylist.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.19384057971014493" />
+        <entry key="app/src/main/res/layout/activity_login_window.xml" value="0.20153985507246377" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19666681906116326" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.22282608695652173" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19384307861328126" />

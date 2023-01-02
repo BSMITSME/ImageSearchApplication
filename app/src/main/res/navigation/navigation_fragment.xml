@@ -43,4 +43,9 @@
         android:name="com.example.imagesearchapp.ui.view.SignUpActivity"
         android:label="SignUpActivity"
         tools:layout="@layout/activity_sign_up"/>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.imagesearchapp.ui.view.SignUpFragment"
+        android:label="activity_login_window"
+        tools:layout="@layout/activity_login_window" />
 </navigation>

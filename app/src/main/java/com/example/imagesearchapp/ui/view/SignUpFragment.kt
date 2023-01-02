@@ -1,6 +1,7 @@
 package com.example.imagesearchapp.ui.view
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -53,10 +54,9 @@ class SignUpFragment : Fragment() {
                         Toast.makeText(context,"이미 존재하는 계정이거나, 회원가입에 실패했습니다.",Toast.LENGTH_SHORT).show()
                     }
                 }
-
         }
-
     }
+
     override fun onDestroy() {
         _binding = null
         MainActivity().hideBottomNavigation(false)

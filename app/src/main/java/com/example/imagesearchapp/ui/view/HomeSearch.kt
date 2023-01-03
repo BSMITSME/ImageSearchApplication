@@ -5,6 +5,8 @@ import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -22,6 +24,7 @@ class HomeSearch : Fragment(){
     private lateinit var imageSearchViewModel: ImageSearchViewModel
     private lateinit var imageSearchAdapter: ImageSearchAdapter
     private lateinit var mainActivity: MainActivity
+    private lateinit var setOnClear : ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,6 +32,7 @@ class HomeSearch : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHomeSearchBinding.inflate(inflater, container, false)
+        setOnClear = binding.searchBoxContainer.clearSearchQuery
         return binding.root
     }
 
@@ -43,6 +47,7 @@ class HomeSearch : Fragment(){
             val images = it.documents
             imageSearchAdapter.submitList(images)
         }
+        showHide(setOnClear)
         mainActivity.hideBottomNavigation(true)
 
     }
@@ -75,6 +80,14 @@ class HomeSearch : Fragment(){
                 }
             }
             startTime = endTime
+        }
+
+    }
+    fun showHide(view:View) {
+        view.visibility = if (view.visibility == View.VISIBLE){
+            View.INVISIBLE
+        } else{
+            View.VISIBLE
         }
     }
     override fun onDestroy() {
